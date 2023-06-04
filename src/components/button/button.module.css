@@ -1,0 +1,88 @@
+:root {
+    /*Themes*/
+    --theme-green: rgb(10, 106, 10); 
+    --theme-green-hover: rgb(7, 76, 7);
+
+    --theme-red: rgb(114, 16, 16); 
+    --theme-red-hover: rgb(82, 8, 8); 
+
+    --theme-orange: rgb(180, 95, 16); 
+    --theme-orange-hover: rgb(135, 74, 16);
+    
+    /*Size*/
+    --size-small: 7em;
+    --size-medium: 13em;
+    --size-large: 16em;
+
+    /*Padding*/
+    --padding-small: 0.8em;
+    --padding-medium: 1.5em;
+    --padding-large: 2em;
+
+    /*Radius*/
+    --radius-small: 0.3em 0.6em 0.3em 0.6em;
+    --radius-medium: 0.4em 0.8em 0.4em 0.8em;
+    --radius-large: 0.5em 1em 0.5em 1em;
+
+    /*Opacity*/
+    --opacity-none: 1;
+    --opacity-little:0.8;
+    --opacity-medium:0.6;
+    --opacity-big:0.4;
+}
+
+/*---Button globals---*/
+.button {
+    margin: 1em;
+    color: white;
+    cursor: pointer;
+    border-style: none;
+    font-family: 'Lilita One', cursive;
+    border-bottom: 4px solid rgba(0,0,0, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.button:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+/*---Themes---*/
+
+.button-theme--green {background-color: var( --theme-green);}
+.button-theme--green:hover {background-color: var(--theme-green-hover);}
+
+.button-theme--red {background-color: var( --theme-red);}
+.button-theme--red:hover {background-color: var(--theme-red-hover);}
+
+.button-theme--yellow {background-color: var( --theme-yellow);}
+.button-theme--yellow:hover {background-color: var(--theme-yellow-hover);}
+
+.button-theme--orange {background-color: var(--theme-orange);}
+.button-theme--orange:hover {background-color: var(--theme-orange-hover);}
+
+
+/*---Size---*/
+.button-size--small {width: var(--size-small)}
+.button-size--medium {width: var(--size-medium)}
+.button-size--large {width: var(--size-large)}
+
+/*---Padding---*/
+.button-padding--small {padding: var(--padding-small);}
+.button-padding--medium {padding: var(--padding-medium);}
+.button-padding--large {padding: var(--padding-large);}
+
+/*---Radius---*/
+.button-radius--small {border-radius: var(--radius-small)}
+.button-radius--medium {border-radius: var(--radius-medium)}
+.button-radius--large {border-radius: var(--radius-large)}
+
+/*---Font size---*/
+.button-font-size--small {font-size: small;}
+.button-font-size--medium {font-size: medium;}
+.button-font-size--large {font-size: large;}
+
+/*---Opacity---*/
+.button-opacity--none {opacity: var(--opacity-none)}
+.button-opacity--little {opacity: var(--opacity-little)}
+.button-opacity--medium {opacity: var(--opacity-medium)}
+.button-opacity--big {opacity: var(--opacity-big)}

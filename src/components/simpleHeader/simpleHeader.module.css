@@ -1,0 +1,26 @@
+.simple-header-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    left:0;
+    top: 0;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Lilita One', cursive;
+    text-shadow: 1px 0px 2px rgba(0,0,0,0.75);
+}
+
+.simple-header-title {
+    font-size: 2.4em;
+    margin: 0.45em;
+}
+
+
+@media screen and (max-width: 800px) {
+    .simple-header-title {
+        font-size: 1.6em;
+        margin: 1em;
+    }
+    
+}

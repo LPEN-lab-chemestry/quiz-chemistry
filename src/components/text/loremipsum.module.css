@@ -1,0 +1,8 @@
+/*---Font size---*/
+.loremipsum-font-size--small {font-size: small;}
+.loremipsum-font-size--medium {font-size: medium;}
+.loremipsum-font-size--large {font-size: large;}
+
+/*---Color---*/
+.loremipsum-color--black {color: rgb(19, 19, 19);}
+.loremipsum-color--white {color: aliceblue;}

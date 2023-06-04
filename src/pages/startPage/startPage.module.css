@@ -1,0 +1,39 @@
+.start-page-container {
+    background-image: linear-gradient(90deg, rgb(49, 109, 139), rgb(70, 189, 202));
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.start-page-logo-area {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.start-page-button-area {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8em;
+}
+
+.start-container-cases {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+    .start-page-logo-area  {
+        display:none;
+        opacity: 0;
+    }
+    .start-page-button-area {
+        margin-left: 0em;
+    }
+    
+}
