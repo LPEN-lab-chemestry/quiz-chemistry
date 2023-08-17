@@ -1,0 +1,96 @@
+.questEazy {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(90deg, rgb(38, 90, 101), rgba(60, 133, 170, 1));
+    color: aliceblue;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageDiv {
+    position: absolute;
+    margin: 30px;
+}
+
+.titleDiv {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 80px;
+}
+
+
+.logo-container {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: rgba(10, 55, 92, 1);
+
+}
+
+.login-container img {
+    width: 5em;
+    height: 5em;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.quest {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.par {
+    padding-left: 50px;
+}
+
+@media screen and (max-width: 1400px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+    }
+
+    .imageDiv {
+        position: relative;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .titleDiv {
+        margin-top: 0px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .par {
+        padding-left: 0px;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

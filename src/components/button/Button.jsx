@@ -1,15 +1,10 @@
-import React from 'react'
-
 import styles from './button.module.css';
 
-const Button = ({size, padding, theme, radius, fontSize, onClick, opacity, ...props}) => {
-
+const Button = ({width, height , padding, theme, radius, fontSize, onClick, ...props}) => {
     const classNames = {
         button: styles.button,
-        opacity: styles[`button-opacity--${opacity}`],
-        size: styles[`button-size--${size}`],
-        padding: styles[`button-padding--${padding}`],
-        radius: styles[`button-radius--${radius}`],
+        height: styles[`button-height--${height}`],
+        width: styles[`button-width--${width}`],
         theme: styles[`button-theme--${theme}`],
         font: styles[`button-font-size--${fontSize}`]
     }
@@ -20,6 +15,5 @@ const Button = ({size, padding, theme, radius, fontSize, onClick, opacity, ...pr
     </button>
   )
 }
-
 
 export default Button

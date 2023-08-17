@@ -1,0 +1,18 @@
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+  
+  .inputslogin input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 100px 0px 100px 100px;
+    background-color: rgba(10, 55, 92, 1);
+    margin-bottom: 2vh;
+  }
+  .inputslogin input::placeholder {
+    color: rgb(205, 202, 202);
+    font-size: 18px; 
+  }
