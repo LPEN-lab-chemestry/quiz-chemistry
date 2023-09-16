@@ -8,7 +8,7 @@
 }
 
 .header {
-    margin-bottom: 5em;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +35,7 @@
 
 .container-center {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -43,6 +43,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.score-detail {
+    color: white;
+    text-align: center;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,136 @@
+.login-container {
+    background-image: linear-gradient(90deg, rgb(38, 90, 101), rgba(60, 133, 170, 1));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background-color: rgba(10, 55, 92, 1);
+}
+
+.login-container h2 {
+    word-wrap: break-word;
+    white-space: normal;
+    height: auto;
+    text-align: justify;
+}
+
+.login-container img {
+    width: 7em;
+    height: 7em;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header h1 {
+    margin-left: 1em;
+    color: white;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+/* Search area */
+
+
+.quiz {
+    padding-top: 4em;
+    color: aliceblue;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.quiz button {
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    margin-left: auto;
+    color: white;
+    font-weight: bold;
+    margin-right: auto;
+    max-width: 40em;
+    width: 80%;
+    padding: 14px;
+    border-radius: 100px 0px 100px 100px;
+    background-color: rgba(10, 55, 92, 1);
+    word-wrap: break-word;
+    white-space: normal;
+    height: auto;
+}
+
+.quiz-response {
+    padding-top: 4em;
+    color: aliceblue;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-response button {
+    text-align: justify;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    margin-left: auto;
+    color: white;
+    font-weight: bold;
+    margin-right: auto;
+    max-width: 40em;
+    width: 80%;
+    padding: 14px;
+    border-radius: 100px 0px 100px 100px;
+    word-wrap: break-word;
+    white-space: normal;
+    height: auto;
+}
+
+.quiz-response span {
+    margin-top: 2.5em;
+}
+
+.correct-response {
+    background-color: rgb(0, 192, 0);
+}
+
+.response-selected {
+    background-color: rgb(163, 0, 0);
+}
+
+.buttons-area {
+    color: white;
+    text-align: center;
+    margin-top: 2em;
+}
+
+
+@media (max-width: 568px) {
+    .container-center {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        margin-left: 0;
+    }
+}

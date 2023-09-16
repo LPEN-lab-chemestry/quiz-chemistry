@@ -45,6 +45,7 @@ function MenuQuestionsLevel() {
 
   const selectLevel = (levelId) => {
     Cookie.set("level_id", levelId);
+    navigate("/quiz");
   };
 
   return (

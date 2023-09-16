@@ -8,6 +8,8 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import MenuQuestionsThemes from "./pages/menuQuestionsThemes/MenuQuestionsThemes";
 import MenuQuestionsLevel from "./pages/menuQuestionsLevel/MenuQuestionLevel";
+import Quiz from "./pages/quiz/Quiz";
+import Congratulations from "./pages/congratulations/Congratulations";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -32,6 +34,14 @@ function App() {
           <Route
             element={auth ? <MenuQuestionsLevel /> : <Navigate to="/login" />}
             path="/menu/level"
+          />
+          <Route
+            element={auth ? <Quiz /> : <Navigate to="/login" />}
+            path="/quiz"
+          />
+          <Route
+            element={auth ? <Congratulations /> : <Navigate to="/login" />}
+            path="/congratulations"
           />
           <Route element={<About />} path="/sobre" />
         </Routes>
