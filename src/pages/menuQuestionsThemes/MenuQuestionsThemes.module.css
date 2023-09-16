@@ -102,3 +102,17 @@
     flex-direction: column;
 }
 
+
+@media (max-width: 568px) {
+    .container-center {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header h1 {
+        margin-left: 0;
+    }
+  }
+
