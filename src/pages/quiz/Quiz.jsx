@@ -146,7 +146,7 @@ function Quiz() {
             </div>
             <div className={styles["options-menu"]}>
               <div className={styles["buttons-area"]}>
-                <h2>Selecione uma opção:</h2>
+                <h3>Selecione uma opção:</h3>
                 <Button
                   onClick={() => navigate("/menu/themes")}
                   width="large"

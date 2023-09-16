@@ -19,7 +19,7 @@ function MenuQuestionsThemes() {
   async function fetchData() {
     setLoading(true);
     const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/themes/list?queryName=${queryName}&page=${page}`,
+      `https://quiz-quimica-deploy.vercel.app/themes/list?queryName=${queryName}&page=${page}&size=5`,
       {
         method: "GET",
         headers: {

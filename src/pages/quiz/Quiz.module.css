@@ -20,6 +20,10 @@
     text-align: justify;
 }
 
+.login-container h3 {
+    text-align: center;
+}
+
 .login-container img {
     width: 7em;
     height: 7em;
