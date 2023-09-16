@@ -1,3 +1,17 @@
 .score-container {
-    
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    color: rgb(0, 30, 54);
+    font-size: large;
+}
+
+.score {
+    font-weight: bold;
+    color: white;
 }

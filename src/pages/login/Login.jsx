@@ -43,6 +43,7 @@ function Login() {
     console.log(responseData);
 
     Cookie.set("auth_token", responseData.token);
+    Cookie.set("user_name", responseData.name);
     Cookie.set("user_email", responseData.email);
     Cookie.set("user_id", responseData.id);
 

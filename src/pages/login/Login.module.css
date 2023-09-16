@@ -48,6 +48,8 @@
 }
 
 .inputslogin input {
+    font-size: large;
+    color: white;
     width: 100%;
     padding: 14px;
     border-radius: 100px 0px 100px 100px;

@@ -3,12 +3,23 @@ import Button from "../../components/button/Button";
 import logo from "../../assets/logo.png";
 import Cookie from "js-cookie";
 
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 const StartFrame = () => {
   const navigate = useNavigate();
+  const { updateAuthFromCookie } = useContext(AuthContext);
 
   const token = Cookie.get("auth_token");
+
+  const handleLogout = () => {
+    Cookie.remove("auth_token");
+    Cookie.remove("user_email");
+    Cookie.remove("user_id");
+    updateAuthFromCookie();
+    navigate("/");
+  };
 
   return (
     <div className={styles["main-container"]}>
@@ -34,15 +45,26 @@ const StartFrame = () => {
         </div>
         <div className={styles["buttons-area"]}>
           {token && (
-            <Button
-              onClick={() => navigate("/menu/themes")}
-              width="large"
-              height="small"
-              theme="white-green"
-              fontSize="large"
-            >
-              Começar agora
-            </Button>
+            <>
+              <Button
+                onClick={() => navigate("/menu/themes")}
+                width="large"
+                height="small"
+                theme="white-green"
+                fontSize="large"
+              >
+                Começar agora
+              </Button>
+              <Button
+                onClick={() => handleLogout()}
+                width="large"
+                height="small"
+                theme="red"
+                fontSize="large"
+              >
+                Sair
+              </Button>
+            </>
           )}
           {!token && (
             <>

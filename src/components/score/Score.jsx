@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const Score = () => {
   const userId = Cookie.get("user_id");
+  const userName = Cookie.get("user_name");
 
   const [score, setScore] = useState("");
 
@@ -29,7 +30,8 @@ const Score = () => {
 
   return (
     <div className={styles["score-container"]}>
-      {score && <h1>{score} pts</h1>}
+      <span className={styles["player"]}>{userName}</span>
+      {score && <span className={styles["score"]}>{score} pts</span>}
     </div>
   );
 };
