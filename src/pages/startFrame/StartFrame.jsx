@@ -1,11 +1,13 @@
 import styles from "./StartFrame.module.css";
 import Button from "../../components/button/Button";
 import logo from "../../assets/logo.png";
+import Cookie from "js-cookie";
 
 import { useNavigate } from "react-router-dom";
 
 const StartFrame = () => {
   const navigate = useNavigate();
+  const token = Cookie.get("auth_token");
 
   return (
     <div className={styles["main-container"]}>
@@ -14,7 +16,7 @@ const StartFrame = () => {
         <div className={styles["right"]}>
           <div className={styles["button-sobre"]}>
             <Button
-              onClick={()=>navigate("/sobre")}
+              onClick={() => navigate("/sobre")}
               width="small"
               height="small"
               theme="orange"
@@ -31,7 +33,7 @@ const StartFrame = () => {
         </div>
         <div className={styles["buttons-area"]}>
           <Button
-            onClick={()=>navigate("/conta")}
+            onClick={() => navigate("/login")}
             width="large"
             height="small"
             theme="white-green"
@@ -39,15 +41,17 @@ const StartFrame = () => {
           >
             Começar agora
           </Button>
-          <Button
-            onClick={()=>navigate("/register")}
-            width="large"
-            height="small"
-            theme="orange"
-            fontSize="large"
-          >
-            Criar uma conta
-          </Button>
+          {!token && (
+            <Button
+              onClick={() => navigate("/register")}
+              width="large"
+              height="small"
+              theme="orange"
+              fontSize="large"
+            >
+              Criar uma conta
+            </Button>
+          )}
         </div>
       </div>
     </div>

@@ -9,17 +9,15 @@ import Loading from "../../components/loading/Loading";
 function Login() {
   const navigate = useNavigate();
 
-  
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   const [data, setData] = useState({
     email: "",
     password: "",
   });
 
   async function handleSubmit() {
-
     setErrorMessage("");
     setLoading(true);
     const response = await fetch(
@@ -39,23 +37,22 @@ function Login() {
       return;
     }
 
-
-
     const responseData = await response.json();
     console.log(responseData);
 
     Cookie.set("auth_token", responseData.token);
     Cookie.set("user_email", responseData.email);
+    Cookie.set("user_id", responseData.id);
 
     setLoading(false);
 
-
+    window.location.reload();
     navigate("/");
   }
 
   return (
     <div className={styles["login-container"]}>
-      {loading && <Loading/>}
+      {loading && <Loading />}
       <header className={styles["header"]}>
         <h1>Login</h1>
         <div className={styles["right"]}>
@@ -65,7 +62,7 @@ function Login() {
               height="small"
               theme="orange"
               fontSize="large"
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
             >
               Voltar
             </Button>
