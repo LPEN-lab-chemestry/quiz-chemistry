@@ -33,26 +33,39 @@ const StartFrame = () => {
           <img src={logo} alt="Imagem logo mico" />
         </div>
         <div className={styles["buttons-area"]}>
-          <Button
-            onClick={() => navigate("/menu/themes")}
-            width="large"
-            height="small"
-            theme="white-green"
-            fontSize="large"
-          >
-            Começar agora
-          </Button>
-
-          {!token && (
+          {token && (
             <Button
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/menu/themes")}
               width="large"
               height="small"
-              theme="orange"
+              theme="white-green"
               fontSize="large"
             >
-              Criar uma conta
+              Começar agora
             </Button>
+          )}
+          {!token && (
+            <>
+              <Button
+                onClick={() => navigate("/login")}
+                width="large"
+                height="small"
+                theme="white-green"
+                fontSize="large"
+              >
+                Logar
+              </Button>
+
+              <Button
+                onClick={() => navigate("/register")}
+                width="large"
+                height="small"
+                theme="orange"
+                fontSize="large"
+              >
+                Criar uma conta
+              </Button>
+            </>
           )}
         </div>
       </div>

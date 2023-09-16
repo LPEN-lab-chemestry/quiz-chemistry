@@ -2,12 +2,14 @@ import Button from "../../components/button/Button";
 import styles from "./Login.module.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Cookie from "js-cookie";
 import Loading from "../../components/loading/Loading";
+import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
+  const { updateAuthFromCookie } = useContext(AuthContext);
 
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -46,8 +48,8 @@ function Login() {
 
     setLoading(false);
 
-    window.location.reload();
-    //navigate("/menu/themes");
+    updateAuthFromCookie();
+    navigate("/menu/themes");
   }
 
   return (
