@@ -26,11 +26,11 @@ function App() {
             path="/login"
           />
           <Route
-            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/login" />}
+            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/" />}
             path="/menu/themes"
           />
           <Route
-            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/login" />}
+            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/" />}
             path="/menu/level"
           />
           <Route element={<About />} path="/sobre" />
