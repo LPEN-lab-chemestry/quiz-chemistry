@@ -6,6 +6,7 @@ import Score from "../../components/score/Score";
 import { useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import Loading from "../../components/loading/Loading";
+import { urlServer } from "../../urlServer/UrlServer";
 
 function MenuQuestionsLevel() {
   const navigate = useNavigate();
@@ -16,16 +17,13 @@ function MenuQuestionsLevel() {
 
   async function fetchData() {
     setLoading(true);
-    const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/levels/list?queryName=`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`${urlServer}/levels/list?queryName=`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     const responseData = await response.json();
 

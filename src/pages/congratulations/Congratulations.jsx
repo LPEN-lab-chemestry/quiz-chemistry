@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { urlServer } from "../../urlServer/UrlServer";
 
 const Congratulations = () => {
   const navigate = useNavigate();
@@ -27,16 +28,13 @@ const Congratulations = () => {
   const [score, setScore] = useState("");
 
   async function fetchScore() {
-    const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/users/score?userId=${userId}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`${urlServer}/users/score?userId=${userId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     const responseData = await response.json();
     setScore(responseData.score);

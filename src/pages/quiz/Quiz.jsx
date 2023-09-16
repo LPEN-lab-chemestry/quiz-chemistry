@@ -7,6 +7,7 @@ import Cookie from "js-cookie";
 import Loading from "../../components/loading/Loading";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { urlServer } from "../../urlServer/UrlServer";
 
 function Quiz() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Quiz() {
   async function fetchData() {
     setLoading(true);
     const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/questions/generate?levelId=${levelId}&themeId=${themeId}`,
+      `${urlServer}/questions/generate?levelId=${levelId}&themeId=${themeId}`,
       {
         method: "GET",
         headers: {
@@ -54,7 +55,7 @@ function Quiz() {
     setLoading(true);
     setOptionSelected(option);
     const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/questions/verify?questionId=${data.id}&optionSelected=${option}&userId=${userId}`,
+      `${urlServer}/questions/verify?questionId=${data.id}&optionSelected=${option}&userId=${userId}`,
       {
         method: "GET",
         headers: {

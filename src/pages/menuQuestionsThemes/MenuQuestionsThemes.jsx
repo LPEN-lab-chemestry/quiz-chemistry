@@ -6,6 +6,7 @@ import Score from "../../components/score/Score";
 import { useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import Loading from "../../components/loading/Loading";
+import { urlServer } from "../../urlServer/UrlServer";
 
 function MenuQuestionsThemes() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function MenuQuestionsThemes() {
   async function fetchData() {
     setLoading(true);
     const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/themes/list?queryName=${queryName}&page=${page}&size=5`,
+      `${urlServer}/themes/list?queryName=${queryName}&page=${page}&size=5`,
       {
         method: "GET",
         headers: {

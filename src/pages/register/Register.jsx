@@ -4,40 +4,36 @@ import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Loading from "../../components/loading/Loading";
+import { urlServer } from "../../urlServer/UrlServer";
 
 function Register() {
   const navigate = useNavigate();
 
-  
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   async function handleSubmit() {
-
-     if(data.confirmPassword !== data.password){
-       setErrorMessage("A senha e confirmação não batem.");
-       return;
-     }
+    if (data.confirmPassword !== data.password) {
+      setErrorMessage("A senha e confirmação não batem.");
+      return;
+    }
 
     setErrorMessage("");
     setLoading(true);
-    const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/users`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`${urlServer}/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
     if (!response.ok) {
       setErrorMessage("Email ou senha inválidos!");
@@ -47,17 +43,18 @@ function Register() {
 
     const responseData = await response.json();
 
-    alert(`Bem vindo, ${responseData.name}. Seu cadastro realizado com sucesso!`);
+    alert(
+      `Bem vindo, ${responseData.name}. Seu cadastro realizado com sucesso!`
+    );
 
     setLoading(false);
 
-
-    navigate("/conta");
+    navigate("/login");
   }
 
   return (
     <div className={styles["login-container"]}>
-      {loading && <Loading/>}
+      {loading && <Loading />}
       <header className={styles["header"]}>
         <h1>Cadastro</h1>
         <div className={styles["right"]}>
@@ -67,7 +64,7 @@ function Register() {
               height="small"
               theme="orange"
               fontSize="large"
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
             >
               Sobre
             </Button>
@@ -79,7 +76,7 @@ function Register() {
       </div>
       <div className={styles["form"]}>
         <div className={styles["inputslogin"]}>
-        <label>
+          <label>
             <input
               type="name"
               value={data.name}
@@ -107,7 +104,9 @@ function Register() {
             <input
               type="password"
               value={data.confirmPassword}
-              onChange={(e) => setData({ ...data, confirmPassword: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, confirmPassword: e.target.value })
+              }
               placeholder="Confirmar senha"
             />
           </label>

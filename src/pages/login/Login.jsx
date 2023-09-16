@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import Cookie from "js-cookie";
 import Loading from "../../components/loading/Loading";
 import { AuthContext } from "../../context/AuthContext";
+import { urlServer } from "../../urlServer/UrlServer";
 
 function Login() {
   const navigate = useNavigate();
@@ -22,16 +23,13 @@ function Login() {
   async function handleSubmit() {
     setErrorMessage("");
     setLoading(true);
-    const response = await fetch(
-      `https://quiz-quimica-deploy.vercel.app/users/auth`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`${urlServer}/users/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
     if (!response.ok) {
       setErrorMessage("Email ou senha inválidos!");
