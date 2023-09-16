@@ -19,19 +19,19 @@ function App() {
         <Routes>
           <Route element={<StartFrame />} path="/" />
           <Route
-            element={!auth ? <Register /> : <Navigate to="/menu/themes" />}
+            element={!auth ? <Register /> : <Navigate to="/" />}
             path="/register"
           />
           <Route
-            element={!auth ? <Login /> : <Navigate to="/menu/themes" />}
+            element={!auth ? <Login /> : <Navigate to="/" />}
             path="/login"
           />
           <Route
-            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/login" />}
+            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/" />}
             path="/menu/themes"
           />
           <Route
-            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/login" />}
+            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/" />}
             path="/menu/level"
           />
           <Route element={<About />} path="/sobre" />
