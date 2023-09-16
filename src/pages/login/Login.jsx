@@ -46,8 +46,8 @@ function Login() {
 
     setLoading(false);
 
-    // window.location.reload();
-    navigate("/");
+    window.location.reload();
+    //navigate("/menu/themes");
   }
 
   return (

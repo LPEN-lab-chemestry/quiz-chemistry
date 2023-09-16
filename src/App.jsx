@@ -11,7 +11,6 @@ import MenuQuestionsLevel from "./pages/menuQuestionsLevel/MenuQuestionLevel";
 
 function App() {
   const { auth } = useContext(AuthContext);
-  console.log(auth);
 
   return (
     <div>
@@ -27,11 +26,11 @@ function App() {
             path="/login"
           />
           <Route
-            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/" />}
+            element={auth ? <MenuQuestionsThemes /> : <Navigate to="/login" />}
             path="/menu/themes"
           />
           <Route
-            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/" />}
+            element={auth ? <MenuQuestionsLevel /> : <Navigate to="/login" />}
             path="/menu/level"
           />
           <Route element={<About />} path="/sobre" />

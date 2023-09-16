@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const StartFrame = () => {
   const navigate = useNavigate();
+
   const token = Cookie.get("auth_token");
 
   return (
@@ -33,7 +34,7 @@ const StartFrame = () => {
         </div>
         <div className={styles["buttons-area"]}>
           <Button
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/menu/themes")}
             width="large"
             height="small"
             theme="white-green"
@@ -41,6 +42,7 @@ const StartFrame = () => {
           >
             Começar agora
           </Button>
+
           {!token && (
             <Button
               onClick={() => navigate("/register")}
