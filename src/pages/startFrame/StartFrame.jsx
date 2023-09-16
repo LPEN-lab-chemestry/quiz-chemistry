@@ -7,14 +7,6 @@ import { useNavigate } from "react-router-dom";
 const StartFrame = () => {
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate("/conta");
-  };
-
-  const handleAbout = () => {
-    navigate("/sobre");
-  };
-
   return (
     <div className={styles["main-container"]}>
       <header className={styles["header"]}>
@@ -22,7 +14,7 @@ const StartFrame = () => {
         <div className={styles["right"]}>
           <div className={styles["button-sobre"]}>
             <Button
-              onClick={handleAbout}
+              onClick={()=>navigate("/sobre")}
               width="small"
               height="small"
               theme="orange"
@@ -39,7 +31,7 @@ const StartFrame = () => {
         </div>
         <div className={styles["buttons-area"]}>
           <Button
-            onClick={handleLogin}
+            onClick={()=>navigate("/conta")}
             width="large"
             height="small"
             theme="white-green"
@@ -48,7 +40,7 @@ const StartFrame = () => {
             Começar agora
           </Button>
           <Button
-            onClick={handleLogin}
+            onClick={()=>navigate("/register")}
             width="large"
             height="small"
             theme="orange"

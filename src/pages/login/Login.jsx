@@ -3,29 +3,61 @@ import styles from "./Login.module.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Cookie from "js-cookie";
+import Loading from "../../components/loading/Loading";
 
 function Login() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  async function handleSubmit() {
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+    setErrorMessage("");
+    setLoading(true);
+    const response = await fetch(
+      `https://quiz-quimica-deploy.vercel.app/users/auth`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
-  const handleSubmit = () => {
-    navigate("/outrasPerguntas");
-  };
+    if (!response.ok) {
+      setErrorMessage("Email ou senha inválidos!");
+      setLoading(false);
+      return;
+    }
+
+
+
+    const responseData = await response.json();
+    console.log(responseData);
+
+    Cookie.set("auth_token", responseData.token);
+    Cookie.set("user_email", responseData.email);
+
+    setLoading(false);
+
+
+    navigate("/");
+  }
 
   return (
     <div className={styles["login-container"]}>
+      {loading && <Loading/>}
       <header className={styles["header"]}>
-        <h1>Conta</h1>
+        <h1>Login</h1>
         <div className={styles["right"]}>
           <div className={styles["button-sobre"]}>
             <Button
@@ -33,8 +65,9 @@ function Login() {
               height="small"
               theme="orange"
               fontSize="large"
+              onClick={()=>navigate("/")}
             >
-              Sobre
+              Voltar
             </Button>
           </div>
         </div>
@@ -47,16 +80,16 @@ function Login() {
           <label>
             <input
               type="email"
-              value={email}
-              onChange={handleEmailChange}
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
               placeholder="Email"
             />
           </label>
           <label>
             <input
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
               placeholder="Senha"
             />
           </label>
@@ -70,6 +103,7 @@ function Login() {
         >
           Logar
         </Button>
+        {errorMessage && <span>{errorMessage}</span>}
       </div>
     </div>
   );

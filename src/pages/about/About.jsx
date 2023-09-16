@@ -22,7 +22,7 @@ const About = () => {
               theme="red"
               fontSize="large"
             >
-              Sobre
+              Voltar
             </Button>
           </div>
         </div>
