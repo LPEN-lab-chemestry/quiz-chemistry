@@ -1,0 +1,104 @@
+.login-container {
+    background-image: linear-gradient(90deg, rgb(38, 90, 101), rgba(60, 133, 170, 1));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.logo-container {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background-color: rgba(10, 55, 92, 1);
+}
+
+.login-container img {
+    width: 7em;
+    height: 7em;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header h1 {
+    margin-left: 1em;
+    color: white;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+/* Search area */
+
+.searchArea button {
+    color: white;
+    font-weight:400;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    font-size: 2em;
+    border-radius: 100px;
+    background-color: rgb(10, 59, 92);
+}
+
+.searchArea {
+    padding-bottom: 1em;
+    padding-top: 1em;
+    width: 100%;
+    justify-content:space-around;
+    display: flex;
+}
+
+.searchArea label {
+    max-width: 20em;
+    width: 90%;
+}
+
+.searchArea input {
+   text-align: center;
+    margin-left: auto;
+    color: white;
+    font-weight: bold;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 100px 0px 100px 100px;
+    background-color: rgba(10, 55, 92, 1);
+}
+
+.searchArea input::placeholder {
+    color: rgb(205, 202, 202);
+    font-size: 18px;
+}
+
+
+.list button {
+    margin-bottom: 0.2em;
+    margin-left: auto;
+    color: white;
+    font-weight: bold;
+    margin-right: auto;
+    max-width: 60em;
+    width: 95%;
+    padding: 14px;
+    border-radius: 100px 0px 100px 100px;
+    background-color: rgba(10, 55, 92, 1);
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
