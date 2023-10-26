@@ -18,6 +18,7 @@ function Quiz() {
   const levelId = Cookie.get("level_id");
   const themeId = Cookie.get("theme_id");
   const [data, setData] = useState();
+  const [responseQuestion, setResponseQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [optionSelected, setOptionSelected] = useState("");
   const [error, setError] = useState(false);
@@ -42,6 +43,8 @@ function Quiz() {
     }
 
     setData(responseData);
+
+    setResponseQuestion(responseData.responseQuestion);
     console.log(responseData);
 
     setLoading(false);
@@ -138,7 +141,7 @@ function Quiz() {
               <h2>{data.description}</h2>
               <span>Resposta correta:</span>
               <button className={styles["correct-response"]}>
-                {data.responseQuestion}
+                {data[`${responseQuestion}`]}
               </button>
               <span>Resposta selecionada:</span>
               <button className={styles["response-selected"]}>
